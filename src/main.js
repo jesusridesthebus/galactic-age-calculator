@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';

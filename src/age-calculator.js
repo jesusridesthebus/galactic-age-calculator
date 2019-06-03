@@ -1,19 +1,26 @@
+/* eslint-disable no-unused-vars */
 export class AgeCalculator {
   constructor(birthday) {
     this.birthday = birthday;
-    this.earthAge = ;
-    this.planetConversion = [["Mercury", 0.24], ["Venus", 0.62], ["Mars", 1.88], ["Jupiter", 11.86]] ;
+    this.earthAge = (((Date.now() - (new Date(birthday).getTime())) / 31557600000).toPrecision(4) * 1);
+    this.planetConversion = {
+      "Mercury": 0.24, 
+      "Venus": 0.62,
+      "Mars": 1.88,
+      "Jupiter": 11.86
+    }
   }
 
-  getAge(birthdate) {
+  getAge(dateString) {
     let today = new Date();
-    let birthday = new Date(birthdate);
-    let age = today.getFullYear() - birthday.getFullYear();
-    let month = today.getMonth() - birthday.getMonth();
-    if(month < 0 || (m === 0 && today.getDate() < birthday.getDate())) {
-      age--;
-    }
-    return age;
+    let birthDate = new Date(dateString);
+    let earthAge = today.getFullYear() - birthDate.getFullYear();
+    let month = today.getMonth() - birthDate.getMonth();
+    if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
+        earthAge--;
+        console.log("stuff", earthAge);
+      }
+      return earthAge;
   }
 
   remainingYears() {
