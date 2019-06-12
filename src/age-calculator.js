@@ -11,26 +11,14 @@ export class AgeCalculator {
     }
   }
 
-  earthAge(birthday) {
+  getAge(birthday) {
     let earthAge = (((Date.now() - (new Date(birthday).getTime())) / 31557600000).MathFloor); 
     return earthAge;
   }
 
-  // getAge(dateString) {
-  //   let today = new Date();
-  //   let birthDate = new Date(dateString);
-  //   let earthAge = today.getFullYear() - birthDate.getFullYear();
-  //   let month = today.getMonth() - birthDate.getMonth();
-  //   if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
-  //       earthAge--;
-  //       console.log("stuff", earthAge);
-  //     }
-  //     return earthAge;
+  // remainingYears() {
+
   // }
-
-  remainingYears() {
-
-  }
 
 
 }
