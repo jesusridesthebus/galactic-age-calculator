@@ -18,8 +18,18 @@ export class AgeCalculator {
 
   remainingYears(planet) {
     let earthAge = Math.floor(((new Date().getTime() - (this.birthday).getTime()) / 31557600000));
-    let lifeExpectancy = (78/this.planetConversion[planet]) - this.getAge(planet);
-    console.log(lifeExpectancy);
+    let lifeRemaining = (78/this.planetConversion[planet]) - this.getAge(planet);
+    return Math.floor(lifeRemaining);
+  }
+
+  yearsPastExpectancy(planet) {
+     let earthAge = this.getAge(planet);
+     // Math.floor(((new Date().getTime() - (this.birthday).getTime()) / 31557600000));
+    let lifeExpectancy = 78/this.planetConversion[planet];
+    if(earthAge >= lifeExpectancy) {
+      console.log(lifeExpectancy);
+      return Math.floor(earthAge - lifeExpectancy);
+    }
     return Math.floor(lifeExpectancy);
   }
 

@@ -31,38 +31,64 @@ describe('AgeCalculator', () => {
     expect(ageOnJupiter).toEqual(2);
   });
 
-  it('should test whether remaining years on Earth is correct', () => {
+  it('should test whether remaining years on Earth are correct', () => {
     let ageCalculator = new AgeCalculator("April 27, 1987");
-    let earthAge = ageCalculator.remainingYears("Earth");
-    expect(earthAge).toEqual(46);
+    let earthRemaining = ageCalculator.remainingYears("Earth");
+    expect(earthRemaining).toEqual(46);
   });
 
-  it('should test whether remaining years on Mercury is correct', () => {
+  it('should test whether remaining years on Mercury are correct', () => {
     let ageCalculator = new AgeCalculator("April 27, 1987");
-    let mercuryAge = ageCalculator.remainingYears("Mercury");
-    expect(mercuryAge).toEqual(192);
+    let mercuryRemaining = ageCalculator.remainingYears("Mercury");
+    expect(mercuryRemaining).toEqual(192);
   });
 
-  it('should test whether remaining years on Venus is correct', () => {
+  it('should test whether remaining years on Venus are correct', () => {
     let ageCalculator = new AgeCalculator("April 27, 1987");
-    let venusAge = ageCalculator.remainingYears("Venus");
-    expect(venusAge).toEqual(74);
+    let venusRemaining = ageCalculator.remainingYears("Venus");
+    expect(venusRemaining).toEqual(74);
   });
 
-  it('should test whether remaining years on Mars is correct', () => {
+  it('should test whether remaining years on Mars are correct', () => {
     let ageCalculator = new AgeCalculator("April 27, 1987");
-    let marsAge = ageCalculator.remainingYears("Mars");
-    expect(marsAge).toEqual(24);
+    let marsRemaining = ageCalculator.remainingYears("Mars");
+    expect(marsRemaining).toEqual(24);
   });
 
-  it('should test whether remaining years on Jupiter is correct', () => {
+  it('should test whether remaining years on Jupiter are correct', () => {
     let ageCalculator = new AgeCalculator("April 27, 1987");
-    let jupiterAge = ageCalculator.remainingYears("Jupiter");
-    expect(jupiterAge).toEqual(4);
+    let jupiterRemaining = ageCalculator.remainingYears("Jupiter");
+    expect(jupiterRemaining).toEqual(4);
   });
 
+  it('should test whether extra years on Earth are correct', () => {
+    let ageCalculator = new AgeCalculator("April 27, 1900");
+    let earthExtra = ageCalculator.yearsPastExpectancy("Earth");
+    expect(earthExtra).toEqual(41);
+  });
 
-  //remaining years on earth
+  it('should test whether extra years on Mercury are correct', () => {
+    let ageCalculator = new AgeCalculator("April 27, 1900");
+    let mercuryExtra = ageCalculator.yearsPastExpectancy("Mercury");
+    expect(mercuryExtra).toEqual(170);
+  });
 
-  //you should have died xx years ago
+  it('should test whether extra years on Venus are correct', () => {
+    let ageCalculator = new AgeCalculator("April 27, 1900");
+    let venusExtra = ageCalculator.yearsPastExpectancy("Venus");
+    expect(venusExtra).toEqual(65);
+  });
+
+  it('should test whether extra years on Mars are correct', () => {
+    let ageCalculator = new AgeCalculator("April 27, 1900");
+    let marsExtra = ageCalculator.yearsPastExpectancy("Mars");
+    expect(marsExtra).toEqual(21);
+  });
+
+  it('should test whether extra years on Jupiter are correct', () => {
+    let ageCalculator = new AgeCalculator("April 27, 1900");
+    let jupiterExtra = ageCalculator.yearsPastExpectancy("Jupiter");
+    expect(jupiterExtra).toEqual(3);
+  });
+
 });
