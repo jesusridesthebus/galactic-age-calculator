@@ -17,7 +17,7 @@ export class AgeCalculator {
   }
 
   remainingYears(planet) {
-    let earthAge = Math.floor(((new Date().getTime() - (this.birthday).getTime()) / 31557600000));
+    let earthAge = this.getAge(planet);
     let lifeRemaining = (78/this.planetConversion[planet]) - this.getAge(planet);
     return Math.floor(lifeRemaining);
   }
@@ -30,5 +30,5 @@ export class AgeCalculator {
     }
     return Math.floor(lifeExpectancy);
   }
-  
+
 }
