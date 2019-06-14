@@ -8,18 +8,20 @@ export class AgeCalculator {
       "Earth": 1,
       "Mars": 1.88,
       "Jupiter": 11.86
-    }
+    };
   }
 
   getAge(planet) {
-    console.log(new Date().getTime() - this.birthday.getTime());
     let earthAge = Math.floor(((new Date().getTime() - (this.birthday).getTime()) / 31557600000));
     return Math.floor(earthAge / this.planetConversion[planet]);
   }
 
-  // remainingYears() {
-
-  // }
+  remainingYears(planet) {
+    let earthAge = Math.floor(((new Date().getTime() - (this.birthday).getTime()) / 31557600000));
+    let lifeExpectancy = (78/this.planetConversion[planet]) - this.getAge(planet);
+    console.log(lifeExpectancy);
+    return Math.floor(lifeExpectancy);
+  }
 
 
 }
